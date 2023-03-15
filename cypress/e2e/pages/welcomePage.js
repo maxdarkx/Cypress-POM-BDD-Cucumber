@@ -1,8 +1,15 @@
 class WelcomePage
 {
+    userName;
+
+    setUsername(user)
+    {
+        this.userName = user;
+    }
     checkWelcomeMessage()
     {
-        cy.get('.title').should('have.text', 'Welcome juanmaya1');  
+        const welcomeMessage = 'Welcome ' + this.userName;
+        cy.get('.title').should('have.text', welcomeMessage);
     }
 }
 
