@@ -40,18 +40,20 @@ class RegisterPage
         this.registerButton = 'input[value="Register"]';
     }
 
-    fillValues(firstName, lastName, street, city, state, zipCode, phoneNumber, ssn, username, password)
+    fillValues(dataTable)
     {
-        this.firstNameValue = firstName;
-        this.lastNameValue = lastName;
-        this.streetValue = street;
-        this.cityValue = city;
-        this.stateValue = state;
-        this.zipCodeValue = zipCode;
-        this.phoneNumberValue = phoneNumber;
-        this.ssnValue = ssn;
-        this.userNameValue = username;
-        this.passwordValue = password;
+        dataTable.hashes().forEach((data)=>{
+                this.firstNameValue = data.firstName;
+                this.lastNameValue = data.lastName;
+                this.streetValue = data.street;
+                this.cityValue = data.city;
+                this.stateValue = data.state;
+                this.zipCodeValue = data.zipCode;
+                this.phoneNumberValue = data.phoneNumber;
+                this.ssnValue = data.ssn;
+                this.userNameValue = data.userName;
+                this.passwordValue = data.password;
+        });
     }
 
 

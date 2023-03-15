@@ -6,23 +6,26 @@ import WelcomePage from "../pages/welcomePage";
 const landing = new LandingPage();
 const welcome = new WelcomePage();
 const register = new RegisterPage();
-const user = 'juanCarlos_5';
+let userName;
 
 Given("The user open the application",()=>
 {
     landing.openLandingPage();
 });
 
-When("He opened the register page and register his personal data",()=>
+When("He opened the register page and register his personal data",(data)=>
 {
     landing.openRegisterPage();
-    register.fillValues('juan', 'maya', 'calle 111', 'medellin', 'antioquia','050088', '+573012405678',
-        '0001', user, 'juan_maya' );
+    register.fillValues(data);
     register.fillForm();
+    data.hashes().forEach((element)=>{
+        userName = element.userName;
+    })
 });
 
 Then("His account is activated and a welcome message is displayed",()=>
 {
-    welcome.setUsername(user);
+
+    welcome.setUsername(userName);
     welcome.checkWelcomeMessage();
 });
