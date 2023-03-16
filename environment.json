@@ -1,0 +1,10 @@
+{
+  "parabank":
+  {
+    "url": "https://parabank.parasoft.com/"
+  },
+  "reqres":{
+    "url": "https://reqres.in/",
+    "api_users": "api/users/"
+  }
+}

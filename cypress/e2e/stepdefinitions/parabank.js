@@ -25,7 +25,6 @@ When("He opened the register page and register his personal data",(data)=>
 
 Then("His account is activated and a welcome message is displayed",()=>
 {
-
     welcome.setUsername(userName);
     welcome.checkWelcomeMessage();
 });

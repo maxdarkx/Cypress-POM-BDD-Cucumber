@@ -8,7 +8,7 @@
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-    "cypress": "^12.8.0"
+    "cypress": "^12.8.1"
   },
   "name": "cypress-pom-bdd-cucumber",
   "version": "1.0.0",
