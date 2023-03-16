@@ -20,7 +20,7 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://parabank.parasoft.com/',
+    //baseUrl: 'https://parabank.parasoft.com/',
     specPattern: "**/*.feature",
     setupNodeEvents,
   },

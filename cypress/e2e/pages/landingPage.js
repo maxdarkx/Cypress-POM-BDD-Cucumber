@@ -3,9 +3,9 @@ class LandingPage
     openLandingPage()
     {
         cy.readFile('environment.json').then((data)=>{
-            cy.wrap(data.parabank.url).as('url')
-        )};
-        return cy.visit(@url);
+            cy.visit(data.parabank.url);
+        });
+
     }
 
     openRegisterPage()
