@@ -18,6 +18,7 @@ When("He opened the register page and register his personal data",(data)=>
     landing.openRegisterPage();
     register.fillValues(data);
     register.fillForm();
+
     data.hashes().forEach((element)=>{
         userName = element.userName;
     })
