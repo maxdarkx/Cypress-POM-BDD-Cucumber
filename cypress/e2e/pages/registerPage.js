@@ -12,6 +12,7 @@ class RegisterPage
     passwordInput;
     repeatedPasswordInput;
     registerButton;
+    logoutButton;
 
     firstNameValue;
     lastNameValue;
@@ -38,6 +39,7 @@ class RegisterPage
         this.passwordInput = '[name="customer.password"]';
         this.repeatedPasswordInput = '[name="repeatedPassword"]';
         this.registerButton = 'input[value="Register"]';
+        this.logoutButton = 'a';
     }
 
     fillValues(dataTable)
@@ -71,6 +73,11 @@ class RegisterPage
         cy.get(this.passwordInput).type(this.passwordValue);
         cy.get(this.repeatedPasswordInput).type(this.passwordValue);
         cy.get(this.registerButton).click();
+    }
+
+    logoutFromRegister()
+    {
+        cy.get(this.logoutButton).contains('Log Out').click();
     }
 }
 
