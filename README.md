@@ -1,20 +1,24 @@
 ## Testing de API mediante el framework Cypress 
-Este repositorio pretende ser una guia básica de trabajo usando Cypress para probar conexiones con API de servidores. Unicamente se ofrece una guia rapida para iniciar a trabajar con Cypress.
+Este repositorio pretende ser una guía básica y rápida de trabajo usando Cypress para probar una aplicación E2E.
 
 ## Instalación
 1. Debe instalar npm para trabajar de forma optima con este repositorio. Puede instalarlo desde el siguiente link: 
     - Guía de instalación: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
     - Descarga de npm (Se recomienda instalar la version LTS mas reciente): https://nodejs.org/en/download
 
-2. Debe instalar git en su equipo para posteriormente descargar el repositorio usando el comando git clone https://github.com/maxdarkx/Cypress-POM-BDD-Cucumber-Api-Testing.git`, o descarguelo como un archivo comprimido:
+2. Debe instalar git en su equipo para posteriormente descargar el repositorio usando el comando git clone https://github.com/maxdarkx/Cypress-POM-BDD-Cucumber-Api-Testing.git`, o descárguelo como un archivo comprimido:
 
 ![archivo comprimido](images/zip%20file.png)
 
-3. Una vez instalado npm, utilice los siguientes comandos para instalar las dependencias:
+3. Una vez instalado npm, utilice el siguiente comando para instalar las dependencias (instalara las dependencias mostradas en el archivo "package.json"):
+    - `npm install`
+
+4. Tambien puede instalar las dependencias por separado. Para ello utilice los siguientes comandos
     - `npm install cypress --save-dev`
     - `npm install @badeball/cypress-cucumber-preprocessor`
     - `npm install -D @bahmutov/cypress-esbuild-preprocessor`
-4. La configuración del cypress es bastante delicada y critica a la hora de ejecutar las pruebas con cypress. Verifique que el archivo `cypress.config.js` contenga la siguiente función requerida para el uso del preprocesador para Cucumber:
+
+5. La configuración del cypress es bastante delicada y critica a la hora de ejecutar las pruebas con Cypress. Verifique que el archivo `cypress.config.js` contenga la siguiente función requerida para el uso del preprocesador para Cucumber:
 ```
   async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
@@ -32,7 +36,7 @@ Este repositorio pretende ser una guia básica de trabajo usando Cypress para pr
 }
 ```
 
-5. Utilice el comando `npx cypress open` para abrir Cypress, y ejecute las feature que necesite haciendo clic sobre ellas.
+6. Utilice el comando `npx cypress open` para abrir Cypress, y ejecute las feature que necesite haciendo clic sobre ellas.
 - Se ejecutara la aplicación Cypress, seleccione la opción `E2E Testing`.
 
 ![Paso 1](images/cypress%20step1.png)
@@ -53,4 +57,4 @@ Este repositorio pretende ser una guia básica de trabajo usando Cypress para pr
 
 ![Paso 5](images/cypressStep5.png)
 
-6. También puede ejecutar cypress desde la terminal ubicándose en la carpeta de instalación del proyecto, y usando el comando `npx cypress run`. De este modo se generaran las evidencias (en video y screenshots) para después ser consumidas por un servicio CI-CD o manualmente, en las carpetas `cypress/video` y `cypress/screenshots`. Consulte la documentación de Cypress para hacer un mejor uso de la consola en https://docs.cypress.io/guides/guides/command-line.
+7. También puede ejecutar cypress desde la terminal ubicándose en la carpeta de instalación del proyecto, y usando el comando `npx cypress run`. De este modo se generaran las evidencias (en video y screenshots) para después ser consumidas por un servicio CI-CD o manualmente, en las carpetas `cypress/video` y `cypress/screenshots`. Consulte la documentación de Cypress para hacer un mejor uso de la consola en https://docs.cypress.io/guides/guides/command-line.
